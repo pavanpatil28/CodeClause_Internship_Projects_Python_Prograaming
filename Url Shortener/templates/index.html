@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logo.jpg">
+    <title>URL Shortener</title>
+
+    <style>
+        
+    body {
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        margin: 10px 20px;
+        background: #f2f2f2;
+    }
+
+    h1{
+        text-align: center;
+        margin: 10px;
+        font-size: 40px;
+        font-weight: 400;
+    }
+
+    label {
+        font-size: 22px;
+        font-weight: 548;
+    }
+    
+    form input[type="text"] {
+        width: 45%;
+        padding: 10px;
+        margin:auto;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+        box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    .f1{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .b1{
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .a1{
+        text-align: center;
+    }
+
+    button{
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+    
+    form button:hover{
+        background-color: #0056b3;
+    }
+
+    .Homepage
+    {
+        margin: 60px auto;
+        max-width: 60%;
+        height: auto;
+        min-height:280px;
+        padding:20px;
+        border-radius: 30px;
+        box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.25);
+        background-color: #fff;
+    }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="Homepage">
+        <h1>URL Shortener</h1>
+        <form class="f1" method="POST" action="/shorten">
+            <label for="url">Enter the URL To Shorten :- 
+            <input id="url" type="text" name="original_url" placeholder="Enter URL here" required>    
+            </label>
+            <br>
+            <div class="b1">
+                <button type="submit">Shorten URL</button>
+            </div>
+        </form>
+        <div class="a1">
+            {% if short_url %}
+            <p>Shortened URL :- <a href="{{ short_url }}">{{ short_url }}</a></p>
+            {% endif %}
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+
